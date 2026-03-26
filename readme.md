@@ -3,11 +3,75 @@ Full code for plots is available in final_project.ipynb
 # Original Model Description
 
 
-# Extension Data
+# Extension Data (Raw)
 
 
 # Full Extended Model
+## Functions from original model (Karin et al)
+### Hormones
+$\begin{equation}\frac{d}{dt}x_1=k_1g_1(x_3)u-w_1x_1\end{equation}$
+$\begin{equation}\frac{d}{dt}x_2=k_2g_2(x_3)x_1-w_2x_2\end{equation}$
+$\begin{equation}\frac{d}{dt}x_3=k_3x_2-w_3x_3\end{equation}$
 
+* $x_1$ = CRH concentration
+* $x_2$ = ACTH concentration
+* $x_3$ = cortisol concentration
+
+### Gland masses
+$\begin{equation}\frac{dC}{dt}=C(k_Cx_1-w_C)\end{equation}$
+$\begin{equation}
+    \frac{dA}{dt}=A(k_Ax_2-w_A)
+\end{equation}$
+* C = functional corticotroph mass
+* A = functional adrenal gland mass
+
+### Negative feedback on CRH
+$\begin{equation}
+    g_1(x_3)= G(x_3)\cdot M(x_3)
+\end{equation}$
+
+### Negative feedback on ACTH
+$\begin{equation}
+    g_2(x_3)= G(x_3)
+\end{equation}$
+
+### Mineralocorticoid feedback
+$\begin{equation}
+    M(x_3)=\frac{1}{x_3}
+\end{equation}$
+
+
+## Extension (Melatonin Treatment Affects GR)
+### R(x_3) = Density of glucocorticoid receptors
+Equation (modeling glucocorticoid receptor resistance) modified from original by Karin et al to incorporate receptor density (R), which varies when melatonin treatment is on
+$\begin{equation}
+    G(x_3)=\frac{R(x_3)}{1+(\frac{x_3}{K_t})^n}
+\end{equation}$
+
+### Sensitivity of glucocorticoid receptors
+Equation modified from original by Yadav & Singh to incorporate melatonin modifier (L)
+$\begin{equation}
+K(t) =
+\begin{cases}
+5 \cdot L(x_3), & \text{if } \frac{t}{1440} \le D_{\text{stop}} \\[8pt]
+2 \cdot L(x_3) + 3 \cdot L(x_3)\, e^{-\frac{t - 1440 D_{\text{stop}}}{\tau}}, & \text{if } \frac{t}{1440} > D_{\text{stop}}
+\end{cases}
+\end{equation}$
+
+### Exponential causes smooth transitions between melatonin effect while stressed and while not stressed
+$\begin{equation}R(x_3) =
+\begin{cases}
+1, & \text{if melatonin treatment is off} \\[6pt]
+b_{\text{low}} + \frac{b_{\text{high}} - b_{\text{low}}}{1 + e^{-15(x_3 - x_{3,\text{threshold}})}}, & \text{if melatonin treatment is on}
+\end{cases}\end{equation}$
+
+$\begin{equation}
+L(x_3) =
+\begin{cases}
+1, & \text{if melatonin treatment is off} \\[6pt]
+v_{\text{low}} + \frac{v_{\text{high}} - v_{\text{low}}}{1 + e^{-15(x_3 - x_{3,\text{threshold}})}}, & \text{if melatonin treatment is on}
+\end{cases}
+\end{equation}$
 
 # Bibliography
 
