@@ -4,7 +4,38 @@ Full code for plots is available in final_project.ipynb
 
 
 # Extension Data (Raw)
+## Relevant Parameter Values
+(Karin et al, Yadav & Singh)
+| Parameter | Description | Value |
+| --------- | ----------- | ----- |
+| $w_1$ | CRH clearance rate | 0.17/min |
+| $w_2$ | ACTH clearance rate | 0.035/min|
+| $w_3$ | Cortisol clearance rate | 0.0086/min|
+| $w_C$ | Corticotroph mass turnover | $\frac{0.099}{(24)(60)}$/min
+| $w_A$ | Adrenal mass turnover | $\frac{0.049}{(24)(60)}$/min |
+| $n$ | Hill coefficient | 3 | 
 
+## Melatonin Effect on Mice
+(Marinova et al)
+
+* $K_d$ is glucocorticoid receptor threshold factor (higher = lower affinity/ higher threshold)
+* $B_{max}$ is expression of receptors (higher = more expression)
+
+### Changes in hypothalamic glucocorticoid receptors
+| Treatment Group | Meaning | $K_d$ | $B_{max}$ |
+| --------------- | -------- | ----- | --------|
+| CS + NaCl | Chronic stress | 13.7 | 17.6 |
+| CS + MEL | Chronic stress + melatonin treatment | 16.4 | 19.3 |
+| CONT + NaCl | Control group | 9.8 | 15.5|
+| CONT + MEL | Control group + melatonin treatment | 26.9| 53.1 |
+
+### Changes in pituitary glucocorticoid receptors
+| Treatment Group | Meaning | $K_d$ | $B_{max}$ |
+| --------------- | -------- | ----- | --------|
+| CS + NaCl | Chronic stress | 2.5 | 16.6 |
+| CS + MEL | Chronic stress + melatonin treatment | 4.1 | 9.3 |
+| CONT + NaCl | Control group | 2.2 | 8.2|
+| CONT + MEL | Control group + melatonin treatment | 10.4 | 20.3 |
 
 # Full Extended Model
 ## Functions from original model (Karin et al)
