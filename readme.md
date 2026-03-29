@@ -2,6 +2,12 @@ Full code for plots is available in final_project.ipynb
 
 # Original Model Description
 
+My assignment is based on an extended model of the HPA axis by Karin et al. It is a five-dimensional ODE system that takes into account functional hormone gland masses (masses of corticotrophs and of adrenal gland). Their new model successfully models the dysregulation of the HPA axis after chronic stress on longer time scales.
+
+Instead of using units, the system's variables are defined in proportion to a healthy baseline (1).
+
+# Extension: Big Picture Idea
+I combined the 5-dimensional ODE system by Karin et al and data from experiments of rats under melatonin treatment. I altered some coefficients in the HPA axis model according to how the data indicated that melatonin affects corticotroph receptors.
 
 # Extension Data (Raw)
 ## Relevant Parameter Values
@@ -89,20 +95,28 @@ K(t) =
 \end{cases}
 \end{equation}$
 
+
 ### Exponential causes smooth transitions between melatonin effect while stressed and while not stressed
 $\begin{equation}R(x_3) =
 \begin{cases}
 1, & \text{if melatonin treatment is off} \\[6pt]
-b_{\text{low}} + \frac{b_{\text{high}} - b_{\text{low}}}{1 + e^{-15(x_3 - x_{3,\text{threshold}})}}, & \text{if melatonin treatment is on}
+b_{\text{not stressed}} & \text{if melatonin treatment is on and x3 } \geq \text { threshold}\\
+b_{\text{stressed}} & \text{if melatonin treatment is on and x3 } < \text { threshold}\\
 \end{cases}\end{equation}$
 
-$\begin{equation}
-L(x_3) =
+$\begin{equation}L(x_3) =
 \begin{cases}
 1, & \text{if melatonin treatment is off} \\[6pt]
-v_{\text{low}} + \frac{v_{\text{high}} - v_{\text{low}}}{1 + e^{-15(x_3 - x_{3,\text{threshold}})}}, & \text{if melatonin treatment is on}
-\end{cases}
-\end{equation}$
+l_{\text{not stressed}} & \text{if melatonin treatment is on and x3 } \geq \text { threshold}\\
+l_{\text{stressed}} & \text{if melatonin treatment is on and x3 } < \text { threshold}\\
+\end{cases}\end{equation}$
+
+
+* $x3$ threshold is the steady state of $x3$ = (CA)^\frac{1}{2} \approx 0.94$ 
+
+* $b_\text{not stressed}$ and $b_\text{stressed}$ are calculated by averaging the headings $B_\text{max}$ (glucocorticoid threshold factor) from the tables in the section "Melatonin Effect on Mice," for the groups going under long term stress and melatonin treatment, and for the control groups with melatonin treatment.
+
+* $l_\text{not stressed}$ and $l_\text{stressed}$ are calculated by averaging the headings $K_d$ (glucocorticoid threshold factor) from the tables in the section "Melatonin Effect on Mice," for the groups going under long term stress and melatonin treatment, and for the control groups with melatonin treatment.
 
 # Bibliography
 
