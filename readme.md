@@ -9,6 +9,13 @@ Instead of using units, the system's variables are defined in proportion to a he
 # Extension: Big Picture Idea
 I combined the 5-dimensional ODE system by Karin et al and data from experiments of rats under melatonin treatment. I altered some coefficients in the HPA axis model according to how the data indicated that melatonin affects corticotroph receptors.
 
+* My extension also uses equations from an extension of the HPA axis model made by Yadav & Singh, who added dynamic glucocorticoid receptor feedback.
+* I decided to look into the relationship between melatonin treatment and the HPA axis because:
+    * I've heard from people that melatonin helps calm down your stress and helps you sleep, but I didn't know very much about the science behind that.
+    * Cortisol and melatonin are closely related! They both work in cicadian patterns. Cortisol peaks when you wake up, and melatonin helps us sleep.
+    * After some more research (Konakchieva, Marinova, Persengiev), I found data that shows that melatonin treatment has a strong effect on glucocorticoid receptors (pivotal to the HPA axis and to stress response)
+
+
 # Extension Data (Raw)
 ## Relevant Parameter Values
 (Karin et al, Yadav & Singh)
