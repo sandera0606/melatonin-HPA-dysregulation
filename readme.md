@@ -103,7 +103,7 @@ K(t) =
 \end{equation}$
 
 
-### Exponential causes smooth transitions between melatonin effect while stressed and while not stressed
+### Melatonin effect while stressed and while not stressed
 $\begin{equation}R(x_3) =
 \begin{cases}
 1, & \text{if melatonin treatment is off} \\[6pt]
