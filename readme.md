@@ -1,4 +1,4 @@
-Full code for plots is available in final_project.ipynb
+Full code for plots and calculations is available in final_project.ipynb
 
 # Original Model Description
 
