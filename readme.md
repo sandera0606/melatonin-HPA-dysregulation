@@ -88,19 +88,14 @@ $\begin{equation}
 ## Extension (Melatonin Treatment Affects GR)
 ### R(x_3) = Density of glucocorticoid receptors
 Equation (modeling glucocorticoid receptor resistance) modified from original by Karin et al to incorporate receptor density (R), which varies when melatonin treatment is on
-$\begin{equation}
-    G(x_3)=\frac{R(x_3)}{1+(\frac{x_3}{K_t})^n}
-\end{equation}$
+
+$G(x_3)=\frac{R(x_3)}{1+(\frac{x_3}{K_t})^n}$
 
 ### Sensitivity of glucocorticoid receptors
 Equation modified from original by Yadav & Singh to incorporate melatonin modifier (L)
-$\begin{equation}
-K(t) =
-\begin{cases}
-5 \cdot L(x_3), & \text{if } \frac{t}{1440} \le D_{\text{stop}} \\[8pt]
-2 \cdot L(x_3) + 3 \cdot L(x_3)\, e^{-\frac{t - 1440 D_{\text{stop}}}{\tau}}, & \text{if } \frac{t}{1440} > D_{\text{stop}}
-\end{cases}
-\end{equation}$
+
+$K(t) = \begin{cases} 5 \cdot L(x_3), & \text{if } \frac{t}{1440} \le D_{\text{stop}} \\[8pt] 2 \cdot L(x_3) + 3 \cdot L(x_3)\, e^{-\frac{t - 1440 D_{\text{stop}}}{\tau}}, & \text{if } \frac{t}{1440} > D_{\text{stop}}
+\end{cases}$
 
 
 ### Melatonin effect while stressed and while not stressed
