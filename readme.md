@@ -53,36 +53,28 @@ I combined the 5-dimensional ODE system by Karin et al and data from experiments
 # Full Extended Model
 ## Functions from original model (Karin et al)
 ### Hormones
-$\begin{equation}\frac{d}{dt}x_1=k_1g_1(x_3)u-w_1x_1\end{equation}$
-$\begin{equation}\frac{d}{dt}x_2=k_2g_2(x_3)x_1-w_2x_2\end{equation}$
-$\begin{equation}\frac{d}{dt}x_3=k_3x_2-w_3x_3\end{equation}$
+$\frac{d}{dt}x_1=k_1g_1(x_3)u-w_1x_1$
+$\frac{d}{dt}x_2=k_2g_2(x_3)x_1-w_2x_2$
+$\frac{d}{dt}x_3=k_3x_2-w_3x_3$
 
 * $x_1$ = CRH concentration
 * $x_2$ = ACTH concentration
 * $x_3$ = cortisol concentration
 
 ### Gland masses
-$\begin{equation}\frac{dC}{dt}=C(k_Cx_1-w_C)\end{equation}$
-$\begin{equation}
-    \frac{dA}{dt}=A(k_Ax_2-w_A)
-\end{equation}$
+$\frac{dC}{dt}=C(k_Cx_1-w_C)$
+$\frac{dA}{dt}=A(k_Ax_2-w_A)$
 * C = functional corticotroph mass
 * A = functional adrenal gland mass
 
 ### Negative feedback on CRH
-$\begin{equation}
-    g_1(x_3)= G(x_3)\cdot M(x_3)
-\end{equation}$
+$g_1(x_3)= G(x_3)\cdot M(x_3)$
 
 ### Negative feedback on ACTH
-$\begin{equation}
-    g_2(x_3)= G(x_3)
-\end{equation}$
+$g_2(x_3)= G(x_3)$
 
 ### Mineralocorticoid feedback
-$\begin{equation}
-    M(x_3)=\frac{1}{x_3}
-\end{equation}$
+$M(x_3)=\frac{1}{x_3}$
 
 
 ## Extension (Melatonin Treatment Affects GR)
@@ -99,19 +91,16 @@ $K(t) = \begin{cases} 5 \cdot L(x_3), & \text{if } \frac{t}{1440} \le D_{\text{s
 
 
 ### Melatonin effect while stressed and while not stressed
-$\begin{equation}R(x_3) =
-\begin{cases}
+$R(x_3) = \begin{cases}
 1, & \text{if melatonin treatment is off} \\[6pt]
 b_{\text{not stressed}} & \text{if melatonin treatment is on and x3 } \geq \text { threshold}\\
 b_{\text{stressed}} & \text{if melatonin treatment is on and x3 } < \text { threshold}\\
-\end{cases}\end{equation}$
+\end{cases}$
 
-$\begin{equation}L(x_3) =
-\begin{cases}
-1, & \text{if melatonin treatment is off} \\[6pt]
+$L(x_3) = \begin{cases} 1, & \text{if melatonin treatment is off} \\[6pt]
 l_{\text{not stressed}} & \text{if melatonin treatment is on and x3 } \geq \text { threshold}\\
 l_{\text{stressed}} & \text{if melatonin treatment is on and x3 } < \text { threshold}\\
-\end{cases}\end{equation}$
+\end{cases}$
 
 
 * $x3$ threshold is the steady state of $x3$ = (CA)^\frac{1}{2} \approx 0.94$ 
